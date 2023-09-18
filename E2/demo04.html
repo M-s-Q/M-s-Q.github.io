@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>实验二-demo04</title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+      attribute vec4 vPosition;
+      uniform mat4 sb;
+      void main(){
+      	gl_Position = sb * vPosition;
+      }
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+      precision mediump float;
+      void main(){
+      	gl_FragColor = vec4( 1.0, 0.3, 0.5, 1.0);
+      }
+    </script>
+    <script type="text/javascript" src="../E2js/webgl-utils.js"></script>
+    <script type="text/javascript" src="../E2js/initShaders.js"></script>
+    <script type="text/javascript" src="../E2js/gl-matrix-min.js"></script>
+    <script type="text/javascript" src="../E2js/gasket-triangles-3.js"></script>
+  </head>
+
+  <body onload="initTriangles_3()">
+    <div align="center">
+      <canvas id="gl-canvas" width="512" height="512"
+        >你的浏览器不支持HTML5 canvas元素</canvas
+      >
+      <div
+        align="center"
+    
+      >
+         请输入您想要剖分的层次： <input id="layer_3" type="text" placeholder="(0-7)" />
+        <div style="margin: 5px 0 10px 0">
+         请输入您想要旋转的角度： <input id="angle" type="text" placeholder="(0~360)" />
+        </div>
+          <input type="button" onclick="submit_3()" value="确定" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
